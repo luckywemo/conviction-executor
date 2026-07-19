@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00e5a0"/>
+      <stop offset="100%" stop-color="#0066ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="26" fill="#0b0e14"/>
+  <!-- rising conviction bars -->
+  <rect x="24" y="66" width="14" height="30" rx="4" fill="url(#g)" opacity="0.45"/>
+  <rect x="44" y="52" width="14" height="44" rx="4" fill="url(#g)" opacity="0.7"/>
+  <rect x="64" y="38" width="14" height="58" rx="4" fill="url(#g)"/>
+  <!-- execution bolt -->
+  <path d="M96 22 L82 50 h10 L78 78 L104 44 h-12 L100 22 Z" fill="#ffd166"/>
+</svg>

@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 import { config, assertProductionConfig } from "./config";
 import { info, quote, execute } from "./routes";
 
@@ -7,7 +8,7 @@ async function buildApp(): Promise<express.Express> {
   app.use(express.json());
 
   // ---- Free endpoints (HTTP 200, no payment) ----
-  app.get("/", info);
+  app.use(express.static(path.join(__dirname, "..", "public")));
   app.get("/info", info);
   app.get("/health", (_req, res) => res.json({ status: "ok" }));
   app.get("/quote", quote);
