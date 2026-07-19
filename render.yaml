@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: conviction-executor
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: PAYMENTS_ENABLED
+        value: "true"
+      - key: CLOB_API_URL
+        value: https://clob.polymarket.com
+      - key: CHAIN_ID
+        value: "137"
+      - key: POLYMARKET_SIGNATURE_TYPE
+        value: "1"
+      - key: MAX_ORDER_USDC
+        value: "100"
+      - key: MAX_DAILY_USDC
+        value: "500"
+      - key: EXECUTE_PRICE_USD
+        value: "$0.10"
+      # Secrets — set these in the Render dashboard (Environment tab), never in git:
+      - key: OKX_API_KEY
+        sync: false
+      - key: OKX_SECRET_KEY
+        sync: false
+      - key: OKX_PASSPHRASE
+        sync: false
+      - key: PAY_TO_ADDRESS
+        sync: false
+      - key: POLYMARKET_PRIVATE_KEY
+        sync: false
+      - key: POLYMARKET_FUNDER_ADDRESS
+        sync: false
